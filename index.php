@@ -46,9 +46,21 @@
             "nome" => "nuovo";
         ];
 
-        if(isset($_GET["parking"])) {
-            $parking = $_GET["parking"];
-            var_dump($parking);
+        if(isset($_GET["parking"])) && $_GET["parking"] === "1" {
+           /*  $parking = $_GET["parking"];
+            var_dump($parking); */
+            $temp_hotels = [];
+
+            foreach($filtered_hotels as $hotel) {
+                if($hotel["parking"]) {
+                    $temp_hotels[] = $hotel;
+                }
+            }
+            $filtered_hotels = $temp_hotels;
+        }
+
+        if (isset($_GET["vote"]) && $_GET["vote"] != "" ) {
+            $temp_hotels
         }
     ?>
 
@@ -78,18 +90,29 @@
     <h2>La lista degli Hotels</h2>
 
     <form action="">
-        <div class="d-flex align-items">
-
+        <div class="d-flex align-items-end">
+            <div>
+                <label for="parking">Parcheggio</label>
+                <select name="parking" id="parking" class="form-select">
+                    <option value="">All</option>
+                    <option value="1"></option>
+                </select>
+            </div>
+            <div>
+                <label for="voto">Voto</label>
+                <input type="text">
+            </div>
         </div>
     </form>
 
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Descrizione</th>
+      <th scope="col">Parcheggio</th>
+      <th scope="col">Voto</th>
+      <th scope="col">Dist. dal Centro</th>
     </tr>
   </thead>
   <tbody>
