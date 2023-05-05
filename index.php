@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-    <title>Document</title>
-</head>
-<body>
-    
     <?php
 
         $hotels = [
@@ -52,16 +40,48 @@
 
         ];
 
+        $filtered_hotels = $hotels;
+
+        $filtered_hotels[] = [
+            "nome" => "nuovo";
+        ];
+
+        if(isset($_GET["parking"])) {
+            $parking = $_GET["parking"];
+            var_dump($parking);
+        }
     ?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+
 
     <?php
-            foreach($hotels as $hotel) {
+         /*    foreach($hotels as $hotel) {
                 var_dump($hotel);
                 echo $hotel['name'];
-            }
+            } */
     ?>
 
-    <h2></h2>
+    <h2>La lista degli Hotels</h2>
+
+    <form action="">
+        <div class="d-flex align-items">
+
+        </div>
+    </form>
 
     <table class="table">
   <thead>
